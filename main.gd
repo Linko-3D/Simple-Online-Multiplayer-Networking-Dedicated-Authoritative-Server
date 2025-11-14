@@ -21,7 +21,7 @@ func create_server():
 	if res == OK:
 		print("SERVER ONLINE\n")
 	else:
-		print("ERROR NUMBER: %d \n", res)
+		print("CAN NOT CREATE SERVER. ERROR NUMBER: %d \n", res)
 
 	multiplayer.multiplayer_peer = peer
 

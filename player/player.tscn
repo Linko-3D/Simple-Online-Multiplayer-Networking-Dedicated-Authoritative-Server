@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bvk1t7kkwds75" path="res://player/player.gd" id="1_4flbx"]
 [ext_resource type="Texture2D" uid="uid://bk8j7g11vwhfk" path="res://icon.svg" id="2_onrkg"]
-[ext_resource type="Script" uid="uid://dx51x0l6uykfd" path="res://inputs_to_server.gd" id="3_i3pqv"]
+[ext_resource type="Script" uid="uid://dx51x0l6uykfd" path="res://player/inputs_to_server.gd" id="3_i3pqv"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_onrkg"]
 properties/0/path = NodePath(".:position")
