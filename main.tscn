@@ -13,9 +13,11 @@ maps = Array[PackedScene]([ExtResource("3_h2yge"), ExtResource("4_1bvp3")])
 [node name="Map" type="Node2D" parent="."]
 unique_name_in_owner = true
 
-[node name="Players" type="Marker2D" parent="."]
+[node name="Players" type="Node2D" parent="."]
 unique_name_in_owner = true
 y_sort_enabled = true
+
+[node name="SpawnPosition" type="Marker2D" parent="."]
 position = Vector2(450, 300)
 
 [node name="GUI" type="VBoxContainer" parent="."]

@@ -37,6 +37,7 @@ func create_server():
 			print("Number of players: %d \n" % multiplayer.get_peers().size())
 			var player_instance = player.instantiate()
 			player_instance.name = str(id)
+			player_instance.global_position = $SpawnPosition.global_position
 			%Players.add_child(player_instance)
 	)
 
