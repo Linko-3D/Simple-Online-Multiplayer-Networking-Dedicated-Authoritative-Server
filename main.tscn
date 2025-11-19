@@ -20,6 +20,7 @@ offset_left = 114.0
 offset_top = 114.0
 offset_right = 1038.0
 offset_bottom = 534.0
+mouse_filter = 2
 
 [node name="GUI" type="VBoxContainer" parent="."]
 offset_right = 40.0

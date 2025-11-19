@@ -8,7 +8,7 @@ const SERVER_PORT = 9999
 @export var maps : Array[PackedScene]
 
 
-func _ready():
+func _ready():	
 	if OS.has_feature("dedicated_server"):
 		create_server()
 	else:
@@ -37,7 +37,11 @@ func create_server():
 			print("Number of players: %d \n" % multiplayer.get_peers().size())
 			var player_instance = player.instantiate()
 			player_instance.name = str(id)
-			player_instance.global_position = $SpawnArea.global_position
+			
+			var x = randi_range(0, $SpawnArea.size.x)
+			var y = randi_range(0, $SpawnArea.size.y)
+			player_instance.global_position = $SpawnArea.global_position + Vector2(x, y)
+
 			$Players.add_child(player_instance)
 	)
 
