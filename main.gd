@@ -32,7 +32,6 @@ func create_server():
 
 	multiplayer.multiplayer_peer = peer
 
-
 	var map_instance = maps.pick_random().instantiate()
 	$Map.add_child(map_instance)
 
@@ -40,9 +39,10 @@ func create_server():
 		func(id):
 			print("%d has joined" % id)
 			print("Number of players: %d\n" % multiplayer.get_peers().size())
+
 			var player_instance = player.instantiate()
 			player_instance.name = str(id)
-			
+
 			var spawn_area = get_tree().get_current_scene().find_child("SpawnArea", true, false)
 			var x = randi_range(0, spawn_area.size.x)
 			var y = randi_range(0, spawn_area.size.y)
