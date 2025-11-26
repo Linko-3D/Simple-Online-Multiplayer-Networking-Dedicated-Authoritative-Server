@@ -63,5 +63,10 @@ func create_client():
 
 	multiplayer.connected_to_server.connect(
 		func hide_GUI():
-		$GUI.hide()
+		%HostButton.hide()
+	)
+
+	multiplayer.server_disconnected.connect(func ():
+		%HostButton.show()
+		create_client()
 	)

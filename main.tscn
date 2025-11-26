@@ -25,11 +25,11 @@ vertical_alignment = 1
 [node name="Players" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="GUI" type="VBoxContainer" parent="."]
-offset_right = 40.0
+[node name="Debug" type="VBoxContainer" parent="."]
+offset_right = 101.0
 offset_bottom = 40.0
 
-[node name="HostButton" type="Button" parent="GUI"]
+[node name="HostButton" type="Button" parent="Debug"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "HOST GAME"
@@ -42,4 +42,4 @@ spawn_path = NodePath("../Players")
 _spawnable_scenes = PackedStringArray("uid://bg6edawcpcn2a", "uid://c5evxt5qada4t")
 spawn_path = NodePath("../Map")
 
-[connection signal="pressed" from="GUI/HostButton" to="." method="create_server"]
+[connection signal="pressed" from="Debug/HostButton" to="." method="create_server"]
