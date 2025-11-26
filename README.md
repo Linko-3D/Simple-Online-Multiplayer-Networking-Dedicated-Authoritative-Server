@@ -6,7 +6,7 @@ A simple Godot multiplayer setup. Change the IP address to your cloud service pu
 
 * Create an Amazon Web Services account, then sign in to the console. At the top right, set the region to where you want to create the server (ideally East United States or West Europe).
 
-* Create an EC2 instance. Create a key pair, name it for example **mykey**, and save it in a folder that you call **security**. Beside the checkbox “Allow SSH traffic from,” set the option to **My IP**. Click **Launch instance**.
+* Create an EC2 instance. Create a key pair, name it for example **mykey**, and save it in a folder that you call **security**. Beside the checkbox **Allow SSH traffic from**, set the option to **My IP**. Click **Launch instance**.
 
 * Go to your instance. Click the **Security** tab. Open the **Security groups** link. Click **Edit inbound rules**. Click **Add rule**, set the type to **Custom UDP**, and for the port range use the port of your game (in this demonstration project it is 8080). For the source, select **Anywhere IPv4**. Click **Save rules**.
 
