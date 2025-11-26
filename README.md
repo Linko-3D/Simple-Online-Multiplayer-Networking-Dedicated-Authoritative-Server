@@ -1,4 +1,4 @@
-### \*\*Simple Online Multiplayer Networking Authoritative Dedicated Server\*\*
+### \# Simple Online Multiplayer Networking Authoritative Dedicated Server
 
 ### 
 
@@ -6,25 +6,35 @@
 
 ### 
 
-### \*\*Tutorial to host the game online:\*\*
+### \## Tutorial to host the game online
 
 ### 
 
-### •	Create an Amazon Web Services account, then sign in to the console. At the top right, set the region to where you want to create the server (ideally East United States or West Europe).
-
-### •	Create an EC2 instance. Create a key pair, name it for example \*mykey\*, and save it in a folder that you call \*Security\*. Beside the checkbox “Allow SSH traffic from,” set the option to \*My IP\*. Click \*Launch instance\*.
-
-### •	Go to your instance. Click the \*Security\* tab. Open the \*Security groups\* link. Click \*Edit inbound rules\*. Click \*Add rule\*, set the type to \*Custom UDP\*, and for the port range use the port of your game (in this demonstration project it is 8080). For the source, select \*Anywhere IPv4\*. Click \*Save rules\*.
-
-### •	In your instance, copy the full Public DNS address to your game script for the constant `SERVER\_IP`.
-
-### •	Export a Linux build of your game. In the \*Resources\* tab, set the \*Export mode\* to \*Export as dedicated server\*. Export it and check \*Export With Debug\* in order to obtain a `.sh` file; this is the file the cloud server will run. Use a simple name such as \*server\* and save your project in a folder called \*Server\*.
-
-### •	Open the console. Go to the folder where you saved your key, for example:
+### \* Create an Amazon Web Services account, then sign in to the console. At the top right, set the region to where you want to create the server (ideally East United States or West Europe).
 
 ### 
 
-### ```
+### \* Create an EC2 instance. Create a key pair, name it for example \*\*mykey\*\*, and save it in a folder that you call \*\*Security\*\*. Beside the checkbox “Allow SSH traffic from,” set the option to \*\*My IP\*\*. Click \*\*Launch instance\*\*.
+
+### 
+
+### \* Go to your instance. Click the \*\*Security\*\* tab. Open the \*\*Security groups\*\* link. Click \*\*Edit inbound rules\*\*. Click \*\*Add rule\*\*, set the type to \*\*Custom UDP\*\*, and for the port range use the port of your game (in this demonstration project it is 8080). For the source, select \*\*Anywhere IPv4\*\*. Click \*\*Save rules\*\*.
+
+### 
+
+### \* In your instance, copy the full Public DNS address to your game script for the constant `SERVER\_IP`.
+
+### 
+
+### \* Export a Linux build of your game. In the \*\*Resources\*\* tab, set the \*\*Export mode\*\* to \*\*Export as dedicated server\*\*. Export it and check \*\*Export With Debug\*\* in order to obtain a `.sh` file. This is the file the cloud server will run. Use a simple name such as \*\*server\*\* and save your project in a folder called \*\*Server\*\*.
+
+### 
+
+### \* Open the console. Go to the folder where you saved your key, for example:
+
+### 
+
+### ```bash
 
 ### cd "C:\\Users\\USERNAME\\Desktop\\security"
 
@@ -36,7 +46,7 @@
 
 ### 
 
-### ```
+### ```bash
 
 ### ssh -i mykey.pem ec2-user@PUBLIC\_DNS\_HERE
 
@@ -44,7 +54,7 @@
 
 ### 
 
-### If it asks for the fingerprint, type “yes”.
+### If it asks for the fingerprint, type \*\*yes\*\*.
 
 ### 
 
@@ -52,7 +62,7 @@
 
 ### 
 
-### ```
+### ```bash
 
 ### scp -i "C:\\Users\\USERNAME\\Desktop\\security\\mykey.pem" -r "C:\\Users\\USERNAME\\Desktop\\server" ec2-user@PUBLIC\_DNS\_HERE:~/server
 
@@ -64,7 +74,7 @@
 
 ### 
 
-### ```
+### ```bash
 
 ### ssh -i mykey.pem ec2-user@PUBLIC\_DNS\_HERE
 
@@ -76,7 +86,7 @@
 
 ### 
 
-### ```
+### ```bash
 
 ### chmod -R +x server
 
@@ -88,7 +98,7 @@
 
 ### 
 
-### ```
+### ```bash
 
 ### ./server/server.sh
 
