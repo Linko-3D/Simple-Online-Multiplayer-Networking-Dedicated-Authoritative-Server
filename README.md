@@ -14,7 +14,7 @@ A simple Godot multiplayer setup. Change the IP address to your cloud service pu
 
 * Export a Linux build of your game. In the **Resources** tab, set the **Export mode** to **Export as dedicated server**. Export it and check **Export With Debug** in order to obtain a `.sh` file. This is the file the cloud server will run. Use a simple name such as **server** and save your project in a folder called **server**.
 
-Open the console. Go to the folder where you saved your key, for example (use right click to paste):
+Open the console. Go to the folder where you saved your key, for example (use right click to paste in the console):
 
 ```bash
 cd "C:\Users\USERNAME\Desktop\security"
