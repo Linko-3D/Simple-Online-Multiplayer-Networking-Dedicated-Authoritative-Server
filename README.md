@@ -76,7 +76,7 @@ Do the same command as before to launch the server:
 ./server/server.sh
 ```
 
-You can now close the console or shut down your computer, and your game will still be running. You can also check if it is running by typing **exit** then **tmux ls**.
+You can now close the console or shut down your computer, and your server will still be running. You can also check if it is running by typing **exit** then **tmux ls**.
 
 To disconnect your server, go back to your tmux session if you had left it by typing this:
 
