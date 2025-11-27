@@ -28,7 +28,7 @@ ssh -i mykey.pem ec2-user@PUBLIC_DNS_HERE
 
 If it asks for the fingerprint, type **yes**. Then type it again to connect; you should see a bird displayed.
 
-Before uploading your server file, make sure that you have pasted the Public DNS of your instance for the SERVER_IP constant in your game. To upload the files, you must not be connected to the instance. Open a new console and type this, using the path to your key and the path to your server folder. This command will also overwrite the previous version:
+Before uploading your server file, make sure that you have pasted the Public DNS of your instance for the SERVER_IP constant in your game. If you want to upload a new version, delete the previous folder first with this command `rm -rf ~/server`. To upload the files, you must not be connected to the instance. Open a new console and type this, using the path to your key and the path to your server folder.
 
 ```bash
 scp -i "C:\Users\USERNAME\Desktop\security\mykey.pem" -r "C:\Users\USERNAME\Desktop\server" ec2-user@PUBLIC_DNS_HERE:~/server
