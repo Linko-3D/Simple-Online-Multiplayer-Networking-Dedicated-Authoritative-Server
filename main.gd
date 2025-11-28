@@ -45,6 +45,7 @@ func create_server():
 
 	multiplayer.peer_connected.connect(
 		func(id):
+			%Messages.text += str(id) + ": has joined\n"
 			print("%d has joined" % id)
 			print("Number of players: %d\n" % multiplayer.get_peers().size())
 
@@ -61,6 +62,7 @@ func create_server():
 
 	multiplayer.peer_disconnected.connect(
 		func(id):
+			%Messages.text += str(id) + ": has left\n"
 			print("%d has left" % id)
 			print("Number of players: %d\n" % multiplayer.get_peers().size())
 			$Players.get_node(str(id)).queue_free()
@@ -84,9 +86,9 @@ func create_client():
 	)
 
 	multiplayer.server_disconnected.connect(func ():
-		%HostButton.show()
+		create_client() # Try to reconnect
 		$StatusLabel.text = "Connection lost — trying to reconnect…"
-		create_client()
+		%HostButton.show()
 		$Chat.hide()
 	)
 
