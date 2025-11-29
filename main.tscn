@@ -59,12 +59,16 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 editable = false
+context_menu_enabled = false
+selecting_enabled = false
 wrap_mode = 1
 
 [node name="SendMessage" type="LineEdit" parent="Chat/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 max_length = 80
+context_menu_enabled = false
+caret_blink = true
 
 [node name="Debug" type="VBoxContainer" parent="."]
 offset_right = 101.0
