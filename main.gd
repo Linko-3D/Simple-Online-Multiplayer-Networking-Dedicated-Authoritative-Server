@@ -8,6 +8,20 @@ const SERVER_PORT = 8080
 @export var maps : Array[PackedScene]
 
 
+func _input(event):
+	if event.is_action_pressed("enter"):
+		var message = %SendMessage.text.strip_edges()
+		if %SendMessage.visible:
+			if message != "":
+				rpc_id(1, "message", multiplayer.get_unique_id() , %SendMessage.text)
+				%SendMessage.release_focus()
+		else:
+			%SendMessage.grab_focus()
+
+		%SendMessage.text = ""
+		%SendMessage.visible = not %SendMessage.visible
+
+
 func _ready():
 	$Chat.hide()
 
@@ -87,13 +101,6 @@ func create_client():
 		%HostButton.show()
 		$Chat.hide()
 	)
-
-
-func _on_send_message_text_submitted(new_text: String):
-	if %SendMessage.text != "":
-		rpc_id(1, "message", multiplayer.get_unique_id() , new_text)
-		%SendMessage.text = ""
-	%SendMessage.release_focus()
 
 
 @rpc("any_peer", "call_remote", "reliable")

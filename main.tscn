@@ -89,5 +89,4 @@ spawn_path = NodePath("../Map")
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_1bvp3")
 
-[connection signal="text_submitted" from="Chat/MarginContainer/VBoxContainer/SendMessage" to="." method="_on_send_message_text_submitted"]
 [connection signal="pressed" from="Debug/HostButton" to="." method="create_server"]
