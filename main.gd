@@ -21,6 +21,11 @@ func _input(event):
 		%SendMessage.text = ""
 		%SendMessage.visible = not %SendMessage.visible
 
+@rpc("any_peer", "call_remote", "reliable")
+func message(id: int, msg: String):
+	msg = msg.replace("[", "[ ").replace("]", " ]") # Prevent from using BBCode
+	%Messages.text += "[color=orange]%d: %s[/color]\n" % [id, msg]
+
 
 func _ready():
 	$Chat.hide()
@@ -101,9 +106,3 @@ func create_client():
 		%HostButton.show()
 		$Chat.hide()
 	)
-
-
-@rpc("any_peer", "call_remote", "reliable")
-func message(id: int, msg: String):
-	msg = msg.replace("[", "[ ").replace("]", " ]") # Prevent from using BBCode
-	%Messages.text += "[color=orange]%d: %s[/color]\n" % [id, msg]

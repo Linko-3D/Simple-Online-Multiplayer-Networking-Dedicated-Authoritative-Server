@@ -91,7 +91,7 @@ spawn_path = NodePath("../Players")
 _spawnable_scenes = PackedStringArray("uid://bg6edawcpcn2a", "uid://c5evxt5qada4t")
 spawn_path = NodePath("../Map")
 
-[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+[node name="MessagesSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_1bvp3")
 
 [connection signal="pressed" from="Debug/HostButton" to="." method="create_server"]
