@@ -19,7 +19,10 @@ func _physics_process(delta: float):
 	if $InputsToServer.shoot:
 		print("shooting")
 		var bullet_instance = bullet.instantiate()
-		get_tree().get_root().add_child(bullet_instance)
+		bullet_instance.global_position = $Sprite2D/Muzzle.global_position
+		bullet_instance.global_rotation = $Sprite2D.global_rotation
+		#bullet_instance.global_rotation = $Sprite2D.angle()
+		get_tree().get_first_node_in_group("projectiles").add_child(bullet_instance, true)
 	
 	
 	var direction = $InputsToServer.input_dir
@@ -33,4 +36,4 @@ func _physics_process(delta: float):
 	move_and_slide()
 
 	$Sprite2D.look_at($Sprite2D.global_position + $InputsToServer.aim_vector)
-	$Sprite2D.global_rotation = direction.angle()
+	#$Sprite2D.global_rotation = direction.angle()

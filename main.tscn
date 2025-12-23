@@ -27,6 +27,8 @@ vertical_alignment = 1
 
 [node name="Map" type="Node2D" parent="."]
 
+[node name="Projectiles" type="Node2D" parent="." groups=["projectiles"]]
+
 [node name="Players" type="Node2D" parent="."]
 y_sort_enabled = true
 
@@ -97,6 +99,10 @@ replication_config = SubResource("SceneReplicationConfig_1bvp3")
 [node name="DIsplayMessagesTimer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("uid://be6pawkdmayqr")
+spawn_path = NodePath("../Projectiles")
 
 [connection signal="pressed" from="Debug/HostButton" to="." method="create_server"]
 [connection signal="delta_synchronized" from="MessagesSynchronizer" to="." method="_on_messages_synchronizer_delta_synchronized"]

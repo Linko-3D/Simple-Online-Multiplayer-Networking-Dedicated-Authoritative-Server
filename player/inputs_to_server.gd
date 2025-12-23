@@ -17,3 +17,4 @@ func _physics_process(delta):
 		input_dir = Input.get_vector("left", "right", "up", "down")
 		aim_vector = player.global_position.direction_to(player.get_global_mouse_position())
 		shoot = Input.is_action_just_pressed("shoot")
+		

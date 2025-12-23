@@ -55,7 +55,7 @@ func create_server():
 	multiplayer.multiplayer_peer = peer
 
 	var map_instance = maps.pick_random().instantiate()
-	$Map.add_child(map_instance)
+	$Map.add_child(map_instance, true)
 
 	print("DEDICATED SERVER IS RUNNING")
 	print("Waiting for players to join...\n")
@@ -76,7 +76,7 @@ func create_server():
 			var y = randi_range(0, spawn_area.size.y)
 			player_instance.global_position = spawn_area.global_position + Vector2(x, y)
 
-			$Players.add_child(player_instance)
+			$Players.add_child(player_instance, true)
 	)
 
 	multiplayer.peer_disconnected.connect(

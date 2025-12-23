@@ -39,6 +39,10 @@ bullet = ExtResource("2_yw30f")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("3_yw30f")
 
+[node name="Muzzle" type="Marker2D" parent="Sprite2D"]
+position = Vector2(60, 0)
+scale = Vector2(1.05, 1.05)
+
 [node name="DisplayControllerPlayer" type="Sprite2D" parent="Sprite2D"]
 unique_name_in_owner = true
 modulate = Color(0, 0, 0, 0.75000006)
