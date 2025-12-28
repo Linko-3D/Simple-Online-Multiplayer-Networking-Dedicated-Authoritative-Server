@@ -25,7 +25,7 @@ func _input(event):
 		%SendMessage.visible = not %SendMessage.visible
 
 
-@rpc("any_peer", "call_remote", "reliable")
+@rpc("any_peer", "reliable")
 func message(msg: String):
 	var id = multiplayer.get_remote_sender_id()
 	msg = msg.replace("[", "[ ").replace("]", " ]") # Prevent from using BBCode

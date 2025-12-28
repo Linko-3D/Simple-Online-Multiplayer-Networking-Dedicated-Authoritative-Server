@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dtiqolsc7hbtl" path="res://player/sprite.png" id="3_yw30f"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g1dw6"]
-radius = 50.0
+radius = 61.0
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_i3pqv"]
 properties/0/path = NodePath(".:input_dir")
