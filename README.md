@@ -54,6 +54,8 @@ Launch the server with this command:
 ./server/server.sh
 ```
 
+Press **Ctrl + C** to stop it.
+
 **Make it persistent**
 
 To make it persistent and make it always run even if you close the terminal or shut down your computer you must install tmux while being connected to your EC2 instance.
