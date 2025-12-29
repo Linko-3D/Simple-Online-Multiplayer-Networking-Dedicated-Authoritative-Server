@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://be6pawkdmayqr"]
+
+[sub_resource type="GDScript" id="GDScript_6bq6f"]
+script/source = "extends Node2D
+
+
+const SPEED = 1000
+
+
+func _process(delta):
+	global_position += global_transform.x * SPEED * delta
+
+
+func _on_timer_timeout() -> void:
+	queue_free()
+"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1y6ct"]
+load_path = "res://.godot/imported/bullet.png-5615cb9904aab8db60fe6f48e996475f.ctex"
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_j40gx"]
+properties/0/path = NodePath(".:global_position")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+properties/1/path = NodePath(".:global_rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 2
+properties/2/path = NodePath(".:modulate")
+properties/2/spawn = true
+properties/2/replication_mode = 2
+
+[node name="Bullet" type="Node2D"]
+script = SubResource("GDScript_6bq6f")
+
+[node name="Bullet" type="Sprite2D" parent="."]
+texture = SubResource("CompressedTexture2D_1y6ct")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_j40gx")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
