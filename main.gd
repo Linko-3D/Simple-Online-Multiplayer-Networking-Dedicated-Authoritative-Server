@@ -38,8 +38,6 @@ func message(msg: String):
 
 
 func _ready() -> void:
-	print( get_tree().get_first_node_in_group("send_message").visible )
-	
 	$Chat.hide()
 
 	if OS.has_feature("editor"):
