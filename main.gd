@@ -8,7 +8,7 @@ const SERVER_PORT = 8080
 @export var maps : Array[PackedScene]
 
 
-func _input(event):
+func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("cancel"):
 		%SendMessage.hide()
 		%SendMessage.text = ""
@@ -37,7 +37,7 @@ func message(msg: String):
 	%Messages.text += "%d: %s\n" % [id, msg]
 
 
-func _ready():
+func _ready() -> void:
 	$Chat.hide()
 
 	if OS.has_feature("editor"):
