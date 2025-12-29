@@ -18,7 +18,7 @@ config/icon="res://icon.svg"
 
 [display]
 
-window/size/resizable=false
+window/stretch/mode="viewport"
 
 [global_group]
 
