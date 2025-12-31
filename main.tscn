@@ -98,7 +98,7 @@ replication_config = SubResource("SceneReplicationConfig_1bvp3")
 wait_time = 5.0
 one_shot = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Menu" type="VBoxContainer" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -111,12 +111,22 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="EnterButton" type="Button" parent="VBoxContainer"]
+[node name="EnterButton" type="Button" parent="Menu"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Enter game"
 
+[node name="SpectateButton" type="Button" parent="Menu"]
+layout_mode = 2
+text = "Spectate"
+
+[node name="QuitButton" type="Button" parent="Menu"]
+layout_mode = 2
+text = "Quit"
+
 [connection signal="pressed" from="Debug/HostButton" to="." method="create_server"]
 [connection signal="delta_synchronized" from="MessagesSynchronizer" to="." method="_on_messages_synchronizer_delta_synchronized"]
 [connection signal="timeout" from="DisplayMessagesTimer" to="." method="_on_d_isplay_messages_timer_timeout"]
-[connection signal="pressed" from="VBoxContainer/EnterButton" to="." method="_on_enter_button_pressed"]
+[connection signal="pressed" from="Menu/EnterButton" to="." method="_on_enter_button_pressed"]
+[connection signal="pressed" from="Menu/SpectateButton" to="." method="_on_spectate_button_pressed"]
+[connection signal="pressed" from="Menu/QuitButton" to="." method="_on_quit_button_pressed"]

@@ -39,7 +39,7 @@ func message(msg: String):
 
 func _on_enter_button_pressed() -> void:
 	rpc_id(1, "spawn_player")
-	%EnterButton.hide()
+	$Menu.hide()
 
 
 @rpc("any_peer", "reliable")
@@ -59,7 +59,7 @@ func spawn_player():
 
 func _ready() -> void:
 	$Chat.hide()
-	%EnterButton.hide()
+	$Menu.hide()
 
 	if OS.has_feature("editor"):
 		$Debug.show()
@@ -104,7 +104,8 @@ func create_server():
 			%Messages.text += "[color=red]" + str(id) + " has left[/color]\n"
 			print("%d has left" % id)
 			print("Number of players: %d\n" % multiplayer.get_peers().size())
-			$Players.get_node(str(id)).queue_free()
+			if $Players.get_node(str(id)):
+				$Players.get_node(str(id)).queue_free()
 	)
 
 
@@ -123,7 +124,7 @@ func create_client():
 		$StatusLabel.text = ""
 		%HostButton.hide()
 		$Chat.show()
-		%EnterButton.show()
+		$Menu.show()
 	)
 
 	multiplayer.server_disconnected.connect(func ():
@@ -141,3 +142,11 @@ func _on_messages_synchronizer_delta_synchronized() -> void:
 
 func _on_d_isplay_messages_timer_timeout() -> void:
 	%Messages.hide()
+
+
+func _on_quit_button_pressed() -> void:
+	get_tree().quit()
+
+
+func _on_spectate_button_pressed() -> void:
+	pass # Replace with function body.
