@@ -104,12 +104,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -48.5
-offset_top = -20.0
-offset_right = 48.5
-offset_bottom = 20.0
+offset_left = -92.75
+offset_top = -68.0
+offset_right = 92.75
+offset_bottom = 68.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="SetName" type="LineEdit" parent="Menu"]
+layout_mode = 2
+placeholder_text = "Anonymous"
 
 [node name="EnterButton" type="Button" parent="Menu"]
 unique_name_in_owner = true
